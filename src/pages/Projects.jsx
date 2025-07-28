@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -38,13 +38,17 @@ const allProjects = [
   },
 ];
 
-const categories = ["All", "Web", "App"];
+const categories = ["All Projects"];
 
 export default function Projects() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    setFilter("All Projects");
+  }, []);
 
   const filteredProjects =
-    filter === "All"
+    filter === "All Projects"
       ? allProjects
       : allProjects.filter((p) => p.category === filter);
 
@@ -52,7 +56,7 @@ export default function Projects() {
     <section id="projects" className="py-16 px-4 max-w-6xl mx-auto text-center">
       <h2 className="text-3xl font-bold mb-8">Projects</h2>
 
-      <div className="flex justify-center gap-4 mb-8 flex-wrap">
+      <div className=" justify-center gap-4 mb-8 flex-wrap hidden">
         {categories.map((cat) => (
           <Button
             key={cat}

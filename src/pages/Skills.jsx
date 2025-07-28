@@ -5,7 +5,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 px-2 w-[90%] ml-20  text-white bg-[#28AE60]"
+      className="px-4 sm:px-8 md:px-16 lg:px-24 py-24 w-full max-w-screen-xl mx-auto text-white bg-[#28AE60]"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <h2 className="text-4xl font-bold mb-8">Skills</h2>
